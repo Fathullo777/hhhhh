@@ -1,0 +1,272 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Навигация */
+.nav {
+    background: #1e2a38;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 28px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+}
+
+.link {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover {
+    color: #f39c12;
+    transform: translateY(-2px);
+}
+
+/* Заголовки */
+.title, .posts-title, .todos-title, .user-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #34495e;
+    letter-spacing: 1px;
+}
+
+/* Карточки */
+.user-card, .post-card, .todo-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.user-card:hover, .post-card:hover, .todo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Текст в карточке */
+.user-name, .post-title, .todo-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.user-card p, .post-body, .todo-body {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* Сетка карточек */
+.users-grid, .posts-grid, .todos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Кнопка назад */
+.back-button {
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Контейнеры */
+.todo-wrapper, .post-wrapper, .user-wrapper {
+    background: #ecf0f1;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+}
+
+/* Статус задачи */
+.todo-status {
+    font-size: 1.1rem;
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* Завершенная задача */
+.completed {
+    background: #d4efdf;
+    border-color: #27ae60;
+}
+
+.todo-card.completed {
+    background: #eafaf1;
+    border-color: #27ae60;
+}
+
+/* Цвет фона */
+.loading {
+    font-size: 24px;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+/* Общие стили для кнопок и текста */
+.todo-body, .post-body, .user-body {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.todo-meta, .post-meta {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.todo-meta p, .post-meta p {
+    margin: 5px 0;
+}
+
+/* Изменения для заголовков */
+.post-title, .user-name {
+    font-size: 1.6rem;
+    color: #34495e;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.todo-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    /* Стили для навигации */
+    .nav {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .link {
+        font-size: 14px;
+    }
+
+    /* Стили для карточек */
+    .user-card, .post-card, .todo-card {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .user-name, .post-title, .todo-title {
+        font-size: 1.3rem;
+    }
+
+    /* Сетка карточек */
+    .users-grid, .posts-grid, .todos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Кнопка назад */
+    .back-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Заголовки */
+    .title, .posts-title, .todos-title, .user-title {
+        font-size: 1.8rem;
+    }
+
+    /* Уменьшаем отступы и размеры для маленьких экранов */
+    .todo-wrapper, .post-wrapper, .user-wrapper {
+        padding: 20px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Уменьшаем размеры для самых маленьких экранов */
+    .nav {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .link {
+        font-size: 12px;
+    }
+
+    .user-card, .post-card, .todo-card {
+        padding: 10px;
+    }
+
+    .user-name, .post-title, .todo-title {
+        font-size: 1.2rem;
+    }
+
+    .title, .posts-title, .todos-title, .user-title {
+        font-size: 1.6rem;
+    }
+
+    .users-grid, .posts-grid, .todos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .back-button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
